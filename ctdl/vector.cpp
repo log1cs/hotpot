@@ -105,22 +105,22 @@ public:
 
 	// Delete from range
 	// Time complexity: O(n)
-    void rangeDelete(int pos1, int pos2) {
-        if (pos1 < 0 || pos2 >= size || pos1 > pos2) {
-            // Handle invalid input
-            return;
-        }
-
-        // Shift elements to the left to overwrite the deleted range
-        int j = pos2 + 1;
-        for (int i = pos1; i < size - (pos2 - pos1 + 1); ++i) {
-            array[i] = array[j];
-            ++j;
-        }
-
-        // Update the size of the vector
-        size -= (pos2 - pos1 + 1);
-    }
+    	void rangeDelete(int pos1, int pos2) {
+	        if (pos1 < 0 || pos2 >= size || pos1 > pos2) {
+	            // Handle invalid input
+	            return;
+	        }
+	
+	        // Shift elements to the left to overwrite the deleted range
+	        int j = pos2 + 1;
+	        for (int i = pos1; i < size - (pos2 - pos1 + 1); i++) {
+	            array[i] = array[j];
+	            j++;
+	        }
+	
+	        // Update the size of the vector
+	        size -= (pos2 - pos1 + 1);
+    	}
 
 
 	// newElement will be pushed to the last element in the array.
